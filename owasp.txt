@@ -1,0 +1,34 @@
+1. What is OWASP and what is its primary mission as described in the article?
+
+OWASP är en internationell non-profit organisation, fokuserad på säkerhet i webb-applikationer. Deras mål är att allt deras material ska vara
+gratis och lättillgängligt på deras hemsida så att vem som helst kan använda det för att förbättra applikationers säkerhet. 
+OWASP är mest kända för sin OWASP top 10 lista.
+
+2. Explain the concept of "Injection". Provide an example of how an injection attack could compromise a web application's security.
+
+Injection är en av dom vanligaste säkerhetsriskerna och finns med på OWASP top 10 listan. Det kan handla om att man har ett input-form för användare 
+på hemsidan utan någon form av validering, då finns det risk att någon skickar in skadlig kod till applikationen, tex SQL-kod som ändrar i databasen.
+
+
+3. Explain two strategies to prevent Broken Authentication vulnerabilities.
+
+En strategi för att förhindra "Broken Authentication vulnerabilities" är att använda 2FA, two-factor authentication, där man utöver användarnamn och lösenord
+behöver använda tex en authenticator app på sin telefon för att logga in. Det går även att använda rate-limiting som gör att man bara kan försöka 
+logga in ett antal gånger under en viss tidsperiod. Rate-limiting förhindrar bland annat brute-force attacker.
+
+
+4. Describe the potential consequences of Insecure Deserialization in web applications. How can developers protect against such attacks?
+
+Osäker deserialisering kan leda till säkerhetsproblem i webbapplikationer. En risk är så kallad DDos attack där angripare kan överbelasta systemet genom att
+skicka stora eller skadligt formaterade serialiserade data, vilket kan göra applikationen otillgänglig. En anna risk är så kallad remote code execution,
+fjärrkörning av kod. Det enda helt säkra skyddet är att helt undvika att deserialisera data från okända källor.
+
+
+5. Briefly define Cross-Site Scripting (XSS) as outlined in the article and list two methods suggested in the article to prevent XSS attacks in web applications.
+
+Cross-Site Scripting (XSS) är en sårbarhet som uppstår när webbapplikationer tillåter användare att lägga till egen kod i en URL eller på en webbplats som kan ses 
+av andra användare. Detta kan utnyttjas av en angripare för att köra skadlig JavaScript-kod i offrets webbläsare.
+
+Två metoder för att förhindra XSS attacker:
+Undvika osäkra HTTP-förfrågningar och validera användargenererat innehåll för att förhindra skadlig kod från att exekveras.
+Utnyttja moderna webbteknologier som ReactJS eller Ruby on Rails, som har inbyggda skydd mot XSS-attacker.
